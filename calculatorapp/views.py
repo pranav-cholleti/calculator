@@ -10,7 +10,7 @@ def result(request):
 
     
     if request.GET.get('add') == "":
-        ans = num1 * num2
+        ans = num1 + num2
 
     elif request.GET.get('subtract') == "":    
         ans = num1 - num2
