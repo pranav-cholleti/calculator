@@ -9,7 +9,7 @@ def result(request):
     num2 = int(request.GET.get('number2'))
 
     
-    if request.GET.get('add') == "":
+    if 'add' in request.GET:
         ans = num1 + num2
 
     elif request.GET.get('subtract') == "":    
