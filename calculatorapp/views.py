@@ -13,7 +13,7 @@ def result(request):
         ans = num1 + num2
 
     elif request.GET.get('subtract') == "":    
-        ans = num1 * num2
+        ans = num1 - num2
 
     elif request.GET.get('multiply') == "":    
         ans = num1 * num2
@@ -22,3 +22,4 @@ def result(request):
         ans = num1 / num2
 
     return render(request,'result.html',{'ans': ans})
+    
