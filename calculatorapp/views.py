@@ -22,3 +22,4 @@ def result(request):
         ans = num1 / num2
 
     return render(request,'result.html',{'ans': ans})
+    return render(request, 'result.html', {'ans': ans})
