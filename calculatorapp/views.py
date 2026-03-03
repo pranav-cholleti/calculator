@@ -12,8 +12,13 @@ def result(request):
     if request.GET.get('add') == "":
         ans = num1 + num2
 
-    elif request.GET.get('subtract') == "":    
-        ans = num1 * num2
+    elif request.GET.get('subtract') == "":
+        try:
+            num1 = float(num1)
+            num2 = float(num2)
+            ans = num1 - num2
+        except ValueError:
+            return HttpResponse("Invalid input: num1 and num2 must be numbers.", status=400)
 
     elif request.GET.get('multiply') == "":    
         ans = num1 * num2
