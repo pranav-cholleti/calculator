@@ -13,7 +13,8 @@ def result(request):
         ans = num1 + num2
 
     elif request.GET.get('subtract') == "":    
-        ans = num1 * num2
+        # Fix for issue #8: Correctly implement subtraction.
+        ans = num1 - num2
 
     elif request.GET.get('multiply') == "":    
         ans = num1 * num2
