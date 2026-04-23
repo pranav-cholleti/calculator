@@ -13,12 +13,15 @@ def result(request):
         ans = num1 + num2
 
     elif request.GET.get('subtract') == "":    
-        ans = num1 * num2
+        ans = num1 - num2
 
-    elif request.GET.get('multiply') == "":    
+    elif request.GET.get('multiply') == "":
         ans = num1 * num2
 
     else:
-        ans = num1 / num2
+        if num2 == 0:
+            ans = 'Error: Division by zero'
+        else:
+            ans = num1 / num2
 
     return render(request,'result.html',{'ans': ans})
