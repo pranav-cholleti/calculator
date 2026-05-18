@@ -8,17 +8,15 @@ def result(request):
     num1 = int(request.GET.get('number1'))
     num2 = int(request.GET.get('number2'))
 
-    
+    ans = None # Initialize ans
+
     if request.GET.get('add') == "":
         ans = num1 + num2
-
-    elif request.GET.get('subtract') == "":    
+    elif request.GET.get('subtract') == "":
+        ans = num1 - num2 # fixed
+    elif request.GET.get('multiply') == "":
         ans = num1 * num2
-
-    elif request.GET.get('multiply') == "":    
-        ans = num1 * num2
-
     else:
         ans = num1 / num2
 
-    return render(request,'result.html',{'ans': ans})
+    return render(request,'result.html', {'ans': ans})
